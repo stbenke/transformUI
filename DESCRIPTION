@@ -1,0 +1,22 @@
+Package: transformUI
+Title: Graphical user interface for transformation functions for flow cytometry data
+Version: 0.1
+Authors@R: person("Stephan", "Benke", email = "s.benke@cytometry.uzh.ch",
+                  role = c("aut", "cre"))
+Description: Provides a graphical user interface for some of the transformation functions in flowCore. 
+  Automated transformation paramter estimation is supported for logicle (via estimateLogicle in flowCore) 
+  and asinh (via estParamFlowVS in flowVS) transformations.
+Depends: R (>= 3.6.0)
+Imports: 
+  flowCore,
+  flowVS,
+  miniUI,
+  shiny,
+  ggplot2,
+  purrr,
+  stringr,
+  tibble
+License: GPL-3
+LazyData: true
+Encoding: UTF-8
+RoxygenNote: 7.1.0
