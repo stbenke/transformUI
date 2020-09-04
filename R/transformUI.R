@@ -50,6 +50,7 @@
 #' @return transformation list with the channels for which a transformation has
 #'   been set, NULL if no transformations were defined.
 #' @export
+#' @import flowCore
 #'
 #' @author Stephan Benke (\email{s.benke@@cytometry.uzh.ch})
 #'
@@ -399,6 +400,7 @@ transformUI <- function(dat, sampleSize = 1e4, transformList = NULL) {
 #'   transformation. Intended to run only for one channel at a time.
 #'
 #' @return list with parameter values w, t, m and a.
+#' @import flowCore
 #'
 estimateLogicleParams <- function(ff, channel) {
   tryCatch( # to handle cases where estimateLogicle fails
@@ -430,12 +432,13 @@ estimateLogicleParams <- function(ff, channel) {
 #' @param tl transformList
 #'
 #' @return list with transformations and parameters per channel
+#' @import flowCore
 extractTransformListParams <- function(ff, tl) {
   out <- list()
 
   for (i in seq_along(tl@transforms)) {
 
-    if (tl@transforms[[i]]@input %in% colnames(ff)) {
+    if (tl@transforms[[i]]@input %in% flowCore::colnames(ff)) {
       if (environment(tl@transforms[[i]]@f)$transformationId %in%
           c("defaultLogTransform", "defaultArcsinhTransform", "defaultLogicleTransform")) {
         if (environment(tl@transforms[[i]]@f)$transformationId == "defaultLogTransform") {

@@ -7,7 +7,7 @@
 transformUI(dat, sampleSize = 10000, transformList = NULL)
 }
 \arguments{
-\item{dat}{either a flowFrame or flowSet.}
+\item{dat}{either a \code{flowFrame} or \code{flowSet}.}
 
 \item{sampleSize}{size of the subset used to estimate the parameters and
 display in the plots. Default is 10'000.}
@@ -15,8 +15,8 @@ display in the plots. Default is 10'000.}
 \item{transformList}{a previously created \code{transformList}.}
 }
 \value{
-transformation list for the channels where a transformation has been
-  set, NULL if no transformations were defined.
+transformation list with the channels for which a transformation has
+  been set, NULL if no transformations were defined.
 }
 \description{
 This Shiny gadget provides a user interface for the log10, Logicle and asinh
@@ -51,7 +51,7 @@ function, all measurements in the \code{flowSet} are combined to a single
 
 Via the \code{transformList} argument, the user can pass a previously created
 \code{transformList} to the function to visualize, modify and extend the
-list. Note that currently, all transformations not supported by transformUI
+list. Note that currently all transformations not supported by transformUI
 will be removed.
 
 Not that the density plot does not update live upon manipulating the sliders
