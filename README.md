@@ -23,7 +23,7 @@ BiocManager::install(c("flowCore", "flowVS"))
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
 
-devtools::install_github("stbenke/transformUI)
+devtools::install_github("stbenke/transformUI")
 ```
 
 ## Licence
